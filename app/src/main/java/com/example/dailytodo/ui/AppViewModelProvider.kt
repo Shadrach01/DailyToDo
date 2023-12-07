@@ -48,6 +48,7 @@ object AppViewModelProvider {
         initializer {
             EditToDoViewModel(
                 this.createSavedStateHandle(),
+                dailyToDoApplication().workManagerContainer.toDoWorkManagerRepository,
                 dailyToDoApplication().sqlContainer.toDoRepository
             )
         }

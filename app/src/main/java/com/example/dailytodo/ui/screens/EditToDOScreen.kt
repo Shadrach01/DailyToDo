@@ -56,7 +56,10 @@ fun EditToDoScreen(
                 }
             },
             onValueChange = viewModel::updateUiState,
-            onTimeSelected = viewModel::updateUiState,
+            onTimeSelected = {
+                viewModel.updateUiState(it)
+                viewModel.scheduleNotification(it)
+            },
             modifier = Modifier.padding(innerPadding)
         )
     }
