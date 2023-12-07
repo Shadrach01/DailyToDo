@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Daily ToDo</string>
+    <string name="welcome_text">Today\'s going to be a great day.\nWhat are we doing today?</string>
+    <string name="welcome_button_text">View ToDo</string>
+    <string name="time">Time: </string>
+    <string name="back">Back</string>
+    <string name="home">Home Screen</string>
+    <string name="save">Save</string>
+    <string name="select_time">Select time</string>
+    <string name="todo_details">Details:</string>
+    <string name="ok">OK</string>
+    <string name="attention">Attention</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="cancel">Cancel</string>
+    <string name="input_details">Input details</string>
+    <string name="you_do_not_have_any_new_todo">You do not have any new todo set yet. \nTap the + button to add a new todo</string>
+    <string name="add_new_todo">Add New ToDo</string>
+    <string name="todo_screen">ToDo Details</string>
+    <string name="edit_todo_screen">Edit ToDo </string>
+    <string name="want_to_delete">Are you sure you want to delete?</string>
+    <string name="move_on">Time to move on!! %s.</string>
+</resources>

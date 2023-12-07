@@ -1,0 +1,19 @@
+Index: app/src/main/java/com/example/dailytodo/workManager/ToDoWorkManagerRepository.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.dailytodo.workManager\r\n\r\nimport com.example.dailytodo.data.ToDo\r\nimport java.util.concurrent.TimeUnit\r\n\r\ninterface ToDoWorkManagerRepository {\r\n    fun scheduleReminder(duration: Long, unit: TimeUnit, todoName: String)\r\n    fun cancel(toDO: ToDo)\r\n}\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/dailytodo/workManager/ToDoWorkManagerRepository.kt b/app/src/main/java/com/example/dailytodo/workManager/ToDoWorkManagerRepository.kt
+--- a/app/src/main/java/com/example/dailytodo/workManager/ToDoWorkManagerRepository.kt	(revision 2df3d4614eb56750fe964a76a5b98aa075ddc8be)
++++ b/app/src/main/java/com/example/dailytodo/workManager/ToDoWorkManagerRepository.kt	(date 1701829880325)
+@@ -7,8 +7,3 @@
+     fun scheduleReminder(duration: Long, unit: TimeUnit, todoName: String)
+     fun cancel(toDO: ToDo)
+ }
+-
+-
+-
+-
+-
