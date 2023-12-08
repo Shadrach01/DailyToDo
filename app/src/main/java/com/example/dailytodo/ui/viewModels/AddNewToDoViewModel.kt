@@ -74,7 +74,7 @@ class AddNewToDoViewModel(
             toDoWorkManagerRepository.scheduleReminder(
                 todoTimeMillis,
                 TimeUnit.MILLISECONDS,
-                todo.details
+                todo.toItem()
             )
 
         }
