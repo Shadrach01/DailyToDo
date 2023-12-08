@@ -4,8 +4,8 @@ import com.example.dailytodo.data.ToDo
 import java.util.concurrent.TimeUnit
 
 interface ToDoWorkManagerRepository {
-    fun scheduleReminder(duration: Long, unit: TimeUnit, todoName: String)
-    fun cancel(toDO: ToDo)
+    fun scheduleReminder(duration: Long, unit: TimeUnit, todo: ToDo)
+    fun cancel(todo: ToDo)
 }
 
 
