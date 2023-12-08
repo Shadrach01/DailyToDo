@@ -101,14 +101,11 @@ fun ToDoDetailsScreen(
             toDoDetailsUiState = uiState.value,
             onDelete = {
                 coroutineScope.launch {
+                    viewModel.cancelAlarm(it)
                     viewModel.deleteItem()
                 }
                 navigateBack()
             },
-            cancelAlarm = {
-                viewModel.cancelAlarm(it)
-            },
-            todo = uiState.value.todoDetails.toItem(),
             modifier = Modifier
                 .padding(innerPadding)
                 .verticalScroll(rememberScrollState())
@@ -119,9 +116,7 @@ fun ToDoDetailsScreen(
 @Composable
 private fun ToDoDetailsBody(
     toDoDetailsUiState: ToDoDetailsUiState,
-    onDelete: () -> Unit,
-    todo: ToDo,
-    cancelAlarm: (ToDo) -> Unit,
+    onDelete: (TodoDetails) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     var deleteConfirmationRequired by rememberSaveable {
@@ -149,8 +144,7 @@ private fun ToDoDetailsBody(
             DeleteConfirmationDialog(
                 onDeleteConfirm = {
                     deleteConfirmationRequired = false
-                    onDelete()
-                    cancelAlarm(todo)
+                    onDelete(TodoDetails())
                 },
                 onDeleteCancel = { deleteConfirmationRequired = false },
                 modifier = Modifier.padding(dimensionResource(id = R.dimen.medium_padding))
@@ -264,17 +258,15 @@ fun DeleteConfirmationDialog(
     )
 }
 
-//@Preview
-//@Composable
-//fun ToDoDetailsPreview() {
-//    DailyToDoTheme {
-//        ToDoDetailsBody(
-//            ToDoDetailsUiState(
-//                todoDetails = TodoDetails(1, "WakeUp", "2")
-//            ),
-//            onDelete = {},
-//            cancelAlarm = {},
-//           todo = TodoDetails
-//        )
-//    }
-//}
+@Preview
+@Composable
+fun ToDoDetailsPreview() {
+    DailyToDoTheme {
+        ToDoDetailsBody(
+            ToDoDetailsUiState(
+                todoDetails = TodoDetails(1, "WakeUp", "2")
+            ),
+            onDelete = {},
+        )
+    }
+}

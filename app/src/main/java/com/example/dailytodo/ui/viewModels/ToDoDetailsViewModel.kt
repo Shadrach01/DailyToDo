@@ -1,9 +1,9 @@
 package com.example.dailytodo.ui.viewModels
 
+import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.dailytodo.data.ToDo
 import com.example.dailytodo.data.ToDoRepository
 import com.example.dailytodo.ui.screens.ToDoDetailsScreenDestination
 import com.example.dailytodo.workManager.ToDoWorkManagerRepository
@@ -43,17 +43,17 @@ class ToDoDetailsViewModel(
     suspend fun deleteItem() {
         toDoRepository.deleteToDo(uiState.value.todoDetails.toItem())
     }
+val tag = "Cancel"
 
-    fun cancelAlarm(todoDetails: ToDo) {
-        todoDetails.let (
-            toDoWorkManagerRepository::cancel
+    fun cancelAlarm(todoDetails: TodoDetails) {
+        toDoWorkManagerRepository.cancel(
+            todoDetails.toItem()
         )
-//        toDoWorkManagerRepository.cancel(
-//            uiState.value.todoDetails.toItem()
-//        )
+        Log.d(tag, "AlarmCancelled")
     }
 
 }
+
 
 /**
  * Ui state for the details screen
