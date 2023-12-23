@@ -5,8 +5,8 @@
     <string name="time">Time: </string>
     <string name="back">Back</string>
     <string name="home">Home Screen</string>
-    <string name="save">Save</string>
-    <string name="select_time">Select time</string>
+    <string name="add">Add</string>
+    <string name="select_time">Click here to set time</string>
     <string name="todo_details">Details:</string>
     <string name="ok">OK</string>
     <string name="attention">Attention</string>
@@ -22,4 +22,5 @@
     <string name="edit_todo_screen">Edit ToDo </string>
     <string name="want_to_delete">Are you sure you want to delete?</string>
     <string name="move_on">Time to move on!! %s.</string>
+    <string name="todo_text">Todo Text\n</string>
 </resources>
